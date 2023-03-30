@@ -64,8 +64,8 @@ class Assignment6B
         // Shuffle the array by swapping each value in the array with a random value in the array. 
         // Do this arr.Length times for good measure
         Random randy = new Random();
-        for(int s = 0; s < arr.Length; s++)
-        {
+        //for(int s = 0; s < arr.Length; s++)
+        //{
             for(int i = 0; i < arr.Length; i++)
             {
                 int randomPosition = randy.Next(arr.Length);
@@ -73,7 +73,7 @@ class Assignment6B
                 arr[randomPosition] = arr[i];
                 arr[i] = temp;
             }
-        }
+        //}
         return arr;
     }
 
