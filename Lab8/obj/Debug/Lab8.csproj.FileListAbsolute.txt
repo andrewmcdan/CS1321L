@@ -1,0 +1,6 @@
+G:\odrive\Google Drive\College Stuff\Semester 1\CS1321 Lab\Code\Lab8\bin\Debug\Lab8.exe
+G:\odrive\Google Drive\College Stuff\Semester 1\CS1321 Lab\Code\Lab8\bin\Debug\Lab8.pdb
+G:\odrive\Google Drive\College Stuff\Semester 1\CS1321 Lab\Code\Lab8\obj\Debug\Lab8.csproj.AssemblyReference.cache
+G:\odrive\Google Drive\College Stuff\Semester 1\CS1321 Lab\Code\Lab8\obj\Debug\Lab8.csproj.CoreCompileInputs.cache
+G:\odrive\Google Drive\College Stuff\Semester 1\CS1321 Lab\Code\Lab8\obj\Debug\Lab8.exe
+G:\odrive\Google Drive\College Stuff\Semester 1\CS1321 Lab\Code\Lab8\obj\Debug\Lab8.pdb

@@ -1,0 +1,6 @@
+G:\odrive\Google Drive\College Stuff\Semester 1 - Spring 2023\CS1321 Lab\Code\Assignment6\obj\Debug\Assignment6.csproj.AssemblyReference.cache
+G:\odrive\Google Drive\College Stuff\Semester 1 - Spring 2023\CS1321 Lab\Code\Assignment6\obj\Debug\Assignment6.csproj.CoreCompileInputs.cache
+G:\odrive\Google Drive\College Stuff\Semester 1 - Spring 2023\CS1321 Lab\Code\Assignment6\bin\Debug\Assignment6.exe
+G:\odrive\Google Drive\College Stuff\Semester 1 - Spring 2023\CS1321 Lab\Code\Assignment6\bin\Debug\Assignment6.pdb
+G:\odrive\Google Drive\College Stuff\Semester 1 - Spring 2023\CS1321 Lab\Code\Assignment6\obj\Debug\Assignment6.exe
+G:\odrive\Google Drive\College Stuff\Semester 1 - Spring 2023\CS1321 Lab\Code\Assignment6\obj\Debug\Assignment6.pdb

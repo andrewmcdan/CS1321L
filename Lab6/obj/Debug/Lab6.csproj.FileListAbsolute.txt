@@ -1,0 +1,12 @@
+G:\odrive\Google Drive\College Stuff\Semester 1\CS1321 Lab\Code\Lab6\bin\Debug\Lab6.exe
+G:\odrive\Google Drive\College Stuff\Semester 1\CS1321 Lab\Code\Lab6\bin\Debug\Lab6.pdb
+G:\odrive\Google Drive\College Stuff\Semester 1\CS1321 Lab\Code\Lab6\obj\Debug\Lab6.csproj.AssemblyReference.cache
+G:\odrive\Google Drive\College Stuff\Semester 1\CS1321 Lab\Code\Lab6\obj\Debug\Lab6.csproj.CoreCompileInputs.cache
+G:\odrive\Google Drive\College Stuff\Semester 1\CS1321 Lab\Code\Lab6\obj\Debug\Lab6.exe
+G:\odrive\Google Drive\College Stuff\Semester 1\CS1321 Lab\Code\Lab6\obj\Debug\Lab6.pdb
+G:\My Drive\College Stuff\Semester 1\CS1321 Lab\Code\Lab6\bin\Debug\Lab6.exe
+G:\My Drive\College Stuff\Semester 1\CS1321 Lab\Code\Lab6\bin\Debug\Lab6.pdb
+G:\My Drive\College Stuff\Semester 1\CS1321 Lab\Code\Lab6\obj\Debug\Lab6.csproj.AssemblyReference.cache
+G:\My Drive\College Stuff\Semester 1\CS1321 Lab\Code\Lab6\obj\Debug\Lab6.csproj.CoreCompileInputs.cache
+G:\My Drive\College Stuff\Semester 1\CS1321 Lab\Code\Lab6\obj\Debug\Lab6.exe
+G:\My Drive\College Stuff\Semester 1\CS1321 Lab\Code\Lab6\obj\Debug\Lab6.pdb

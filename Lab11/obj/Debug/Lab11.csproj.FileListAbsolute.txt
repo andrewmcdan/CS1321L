@@ -1,0 +1,6 @@
+G:\odrive\Google Drive\College Stuff\Semester 1 - Spring 2023\CS1321 Lab\Code\Lab11\bin\Debug\Lab11.exe
+G:\odrive\Google Drive\College Stuff\Semester 1 - Spring 2023\CS1321 Lab\Code\Lab11\bin\Debug\Lab11.pdb
+G:\odrive\Google Drive\College Stuff\Semester 1 - Spring 2023\CS1321 Lab\Code\Lab11\obj\Debug\Lab11.csproj.AssemblyReference.cache
+G:\odrive\Google Drive\College Stuff\Semester 1 - Spring 2023\CS1321 Lab\Code\Lab11\obj\Debug\Lab11.csproj.CoreCompileInputs.cache
+G:\odrive\Google Drive\College Stuff\Semester 1 - Spring 2023\CS1321 Lab\Code\Lab11\obj\Debug\Lab11.exe
+G:\odrive\Google Drive\College Stuff\Semester 1 - Spring 2023\CS1321 Lab\Code\Lab11\obj\Debug\Lab11.pdb
