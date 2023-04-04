@@ -11,50 +11,47 @@ using System;
 
 class Assignment6B
 {
-    // make the RNG available to all member functions so that we don't waste time declaring a new one on each shuffle call.
+    // make the RNG available to all member functions so that we don't waste time declaring a new one on each shuffle call. This makes for a much speedier program.
     static Random randy = new Random();
 
     static void Main(string[] args)
     {
         // stopwatch code from https://www.tutorialsteacher.com/articles/how-to-calculate-code-execution-time-in-csharp
         var watch = new System.Diagnostics.Stopwatch();
-        while (true)
+        
+        int[] theArray = new int[13];
+        //Random randy = new Random();
+        for(int i = 0; i < theArray.Length; i++)
         {
-            watch.Reset();
-            int[] theArray = new int[14];
-            //Random randy = new Random();
-            for (int i = 0; i < theArray.Length; i++)
-            {
-                theArray[i] = randy.Next(1, 360);
-            }
-
-            uint attemptsCount = 0;
-            uint attemptsCount2 = 0;
-
-            Console.WriteLine("[Random Sort]\n");
-
-            watch.Start();
-            while (!checkIfSorted(theArray))
-            {
-                attemptsCount++;
-                if (attemptsCount == uint.MaxValue)
-                {
-                    attemptsCount2++; // Not that it matters, but lets track how many times attemptsCount maxes out an unsigned Int. Since this is more than 4 billion iterations, I doubt anyone would let this run long enough to get here.
-                }
-                //Console.WriteLine("Printing array...");
-                //PrintArray(theArray);
-                //Console.WriteLine("\nNot sorted yet!\n");
-                //Console.WriteLine("Shuffling array...\n");
-                theArray = shuffleArray(theArray);
-            }
-            watch.Stop();
-
-            Console.WriteLine("Printing array...");
-            PrintArray(theArray);
-
-            Console.WriteLine("\n\nHooray, it’s sorted! And it only took {0:n0} attempts and {1:n} seconds!", attemptsCount, watch.ElapsedMilliseconds / 1000f);
-            if (attemptsCount2 > 0) Console.WriteLine("Also, it took so long, the attemptsCount variable rolled over {0} time(s)!", attemptsCount2);
+            theArray[i] = randy.Next(1, 360);
         }
+
+        uint attemptsCount = 0;
+        uint attemptsCount2 = 0;
+        
+        Console.WriteLine("[Random Sort]\n");
+        
+        watch.Start();
+        while (!checkIfSorted(theArray))
+        {
+            attemptsCount++;
+            if (attemptsCount == uint.MaxValue)
+            {
+                attemptsCount2++; // Not that it matters, but lets track how many times attemptsCount maxes out an unsigned Int. Since this is more than 4 billion iterations, I doubt anyone would let this run long enough to get here.
+            }
+            //Console.WriteLine("Printing array...");
+            //PrintArray(theArray);
+            //Console.WriteLine("\nNot sorted yet!\n");
+            //Console.WriteLine("Shuffling array...\n");
+            theArray = shuffleArray(theArray);
+        }
+        watch.Stop();
+
+        Console.WriteLine("Printing array...");
+        PrintArray(theArray);
+        
+        Console.WriteLine("\n\nHooray, it’s sorted! And it only took {0} attempts and {1} seconds!", attemptsCount, watch.ElapsedMilliseconds / 1000f);
+        if (attemptsCount2 > 0) Console.WriteLine("Also, it took so long, the attemptCount variable rolled over {0} time(s)!", attemptsCount2);
     }
 
     public static bool checkIfSorted(int[] arr)
@@ -70,9 +67,13 @@ class Assignment6B
     {
         
         // Shuffle the array by repeatedly swapping two random values in the array. 
-        // Do this arr.Length / 2 times and the array should be sufficiently shuffled.
+        // Do this arr.Length / 2 times and the array should be sufficiently shuffled
+        // since each iteration touches two positions. This may not touch all positions
+        // on each iteration, but it's fast.
         //Random randy = new Random();
         
+        //var watch = new System.Diagnostics.Stopwatch();
+        //watch.Start();
         for (int i = 0; i < arr.Length / 2; i++)
         {
             int randomPosition = randy.Next(arr.Length);
@@ -81,6 +82,8 @@ class Assignment6B
             arr[randomPosition] = arr[randomPosition2];
             arr[randomPosition2] = temp;
         }
+        //watch.Stop();
+        //Console.WriteLine(watch.ElapsedTicks);
         
         return arr; // Use the first algorithm. Ignore the rest of this function.
 
@@ -90,6 +93,8 @@ class Assignment6B
         // create a new array of the same size and fill it with -1
         // this will let us keep track of which positions in the array have been filled
         
+        //watch.Reset();
+        //watch.Start();
         int[] newArr = new int[arr.Length];
         for(int i = 0; i < arr.Length; i++)
         {
@@ -107,6 +112,8 @@ class Assignment6B
             // then assign that location the next value
             newArr[randomPos] = arr[i];
         }
+        //watch.Stop();
+        //Console.WriteLine(watch.ElapsedTicks);
         
         return newArr;
 
