@@ -15,9 +15,15 @@ class Lab11B
     {
         Console.Write("Enter a password: ");
         string password = Console.ReadLine();
+        
         bool hasUpper = !password.Equals(password.ToLower());
         bool is8orLonger = password.Length >= 8;
-        bool hasDigit = containsDigit(password);
+                
+        bool hasDigit = false;
+        foreach(char character in password)
+            if (character >= 48 && character <= 57) 
+                hasDigit = true;
+
         if (hasUpper && is8orLonger && hasDigit)
         {
             Console.WriteLine("Valid password");
@@ -28,18 +34,5 @@ class Lab11B
         }
         Console.WriteLine();
         Console.WriteLine("Program Ends");
-    }
-
-    public static bool containsDigit(string s)
-    {
-        bool found = false;
-        for(int i = 0; i <= 9; i++)
-        {
-            if(s.IndexOf(i.ToString()) != -1){
-                found = true;
-            }
-        }
-        return found;
-    }
-        
+    }        
 }

@@ -49,8 +49,7 @@ class Lab11A
 
     public static bool isYes(string s)
     {
-        s = s.ToLower();
-        return s.Equals("yes");
+        return s.ToLower().Equals("yes");
     }
 }
 

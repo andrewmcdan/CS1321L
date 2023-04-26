@@ -11,50 +11,44 @@ using System;
 
 class Assignment6B
 {
-    // make the RNG available to all member functions so that we don't waste time declaring a new one on each shuffle call.
-    static Random randy = new Random();
-
     static void Main(string[] args)
     {
         // stopwatch code from https://www.tutorialsteacher.com/articles/how-to-calculate-code-execution-time-in-csharp
         var watch = new System.Diagnostics.Stopwatch();
-        while (true)
+        
+        int[] theArray = new int[17];
+        Random randy = new Random();
+        for (int i = 0; i < theArray.Length; i++)
         {
-            watch.Reset();
-            int[] theArray = new int[14];
-            //Random randy = new Random();
-            for (int i = 0; i < theArray.Length; i++)
+            theArray[i] = randy.Next(1, 360);
+        }
+
+        uint attemptsCount = 0;
+        uint attemptsCount2 = 0;
+
+        Console.WriteLine("[Random Sort]\n");
+
+        watch.Start();
+        while (!checkIfSorted(theArray))
+        {
+            attemptsCount++;
+            if (attemptsCount == uint.MaxValue)
             {
-                theArray[i] = randy.Next(1, 360);
+                attemptsCount2++; // Not that it matters, but lets track how many times attemptsCount maxes out an unsigned Int. Since this is more than 4 billion iterations, I doubt anyone would let this run long enough to get here.
             }
-
-            uint attemptsCount = 0;
-            uint attemptsCount2 = 0;
-
-            Console.WriteLine("[Random Sort]\n");
-
-            watch.Start();
-            while (!checkIfSorted(theArray))
-            {
-                attemptsCount++;
-                if (attemptsCount == uint.MaxValue)
-                {
-                    attemptsCount2++; // Not that it matters, but lets track how many times attemptsCount maxes out an unsigned Int. Since this is more than 4 billion iterations, I doubt anyone would let this run long enough to get here.
-                }
-                //Console.WriteLine("Printing array...");
-                //PrintArray(theArray);
-                //Console.WriteLine("\nNot sorted yet!\n");
-                //Console.WriteLine("Shuffling array...\n");
-                theArray = shuffleArray(theArray);
-            }
-            watch.Stop();
-
             Console.WriteLine("Printing array...");
             PrintArray(theArray);
-
-            Console.WriteLine("\n\nHooray, it’s sorted! And it only took {0:n0} attempts and {1:n} seconds!", attemptsCount, watch.ElapsedMilliseconds / 1000f);
-            if (attemptsCount2 > 0) Console.WriteLine("Also, it took so long, the attemptsCount variable rolled over {0} time(s)!", attemptsCount2);
+            Console.WriteLine("\nNot sorted yet!\n");
+            Console.WriteLine("Shuffling array...\n");
+            theArray = shuffleArray(theArray);
         }
+        watch.Stop();
+
+        Console.WriteLine("Printing array...");
+        PrintArray(theArray);
+
+        Console.WriteLine("\n\nHooray, it’s sorted! And it only took {0:n0} attempts and {1:n} seconds!", attemptsCount, watch.ElapsedMilliseconds / 1000f);
+        if (attemptsCount2 > 0) Console.WriteLine("Also, it took so long, the attemptsCount variable rolled over {0} time(s)!", attemptsCount2);
     }
 
     public static bool checkIfSorted(int[] arr)
@@ -70,10 +64,10 @@ class Assignment6B
     {
         
         // Shuffle the array by repeatedly swapping two random values in the array. 
-        // Do this arr.Length / 2 times and the array should be sufficiently shuffled.
-        //Random randy = new Random();
+        // Do this arr.Length times and the array should be sufficiently shuffled.
+        Random randy = new Random();
         
-        for (int i = 0; i < arr.Length / 2; i++)
+        for (int i = 0; i < arr.Length; i++)
         {
             int randomPosition = randy.Next(arr.Length);
             int randomPosition2 = randy.Next(arr.Length);
@@ -115,7 +109,7 @@ class Assignment6B
 
         // Advantage of the second algorithm is that it definitely touches every position in the original array. Although, it could
         // still put those values in their original position. 
-        // The major disadvantage of this one is the fact that it uses an RNG. It could theoretically never finish shuffling if
+        // The major disadvantage of this one is the way it uses an RNG. It could theoretically never finish shuffling if
         // the RNG always picks positions that are taken.
     }
 
